@@ -13,13 +13,6 @@ import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 public class SoapClientConfig {
 
     @Bean
-    public Jaxb2Marshaller marshaller() {
-        Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
-        marshaller.setContextPath("tu.paquete.con.las.clases.de.modelo"); // Cambia esto por el paquete correcto
-        return marshaller;
-    }
-
-    @Bean
     public WebServiceTemplate webServiceTemplate(Jaxb2Marshaller marshaller) {
         WebServiceTemplate webServiceTemplate = new WebServiceTemplate();
         webServiceTemplate.setDefaultUri("https://www.banguat.gob.gt/variables/ws/TipoCambio.asmx");
